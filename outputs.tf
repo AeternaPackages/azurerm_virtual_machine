@@ -1,4 +1,9 @@
 # --- azurerm_virtual_machine ---
+output "virtual_machines_id" {
+  description = "Map of id values across all virtual_machines, keyed the same as var.virtual_machines"
+  value       = module.virtual_machines.virtual_machines_id
+}
+
 output "virtual_machines_additional_capabilities" {
   description = "Map of additional_capabilities values across all virtual_machines, keyed the same as var.virtual_machines"
   value       = module.virtual_machines.virtual_machines_additional_capabilities
@@ -122,6 +127,11 @@ output "virtual_machines_zones" {
 }
 
 # --- azurerm_virtual_machine_automanage_configuration_assignment ---
+output "virtual_machine_automanage_configuration_assignments_id" {
+  description = "Map of id values across all virtual_machine_automanage_configuration_assignments, keyed the same as var.virtual_machine_automanage_configuration_assignments"
+  value       = module.virtual_machine_automanage_configuration_assignments.virtual_machine_automanage_configuration_assignments_id
+}
+
 output "virtual_machine_automanage_configuration_assignments_configuration_id" {
   description = "Map of configuration_id values across all virtual_machine_automanage_configuration_assignments, keyed the same as var.virtual_machine_automanage_configuration_assignments"
   value       = module.virtual_machine_automanage_configuration_assignments.virtual_machine_automanage_configuration_assignments_configuration_id
@@ -133,6 +143,11 @@ output "virtual_machine_automanage_configuration_assignments_virtual_machine_id"
 }
 
 # --- azurerm_virtual_machine_data_disk_attachment ---
+output "virtual_machine_data_disk_attachments_id" {
+  description = "Map of id values across all virtual_machine_data_disk_attachments, keyed the same as var.virtual_machine_data_disk_attachments"
+  value       = module.virtual_machine_data_disk_attachments.virtual_machine_data_disk_attachments_id
+}
+
 output "virtual_machine_data_disk_attachments_caching" {
   description = "Map of caching values across all virtual_machine_data_disk_attachments, keyed the same as var.virtual_machine_data_disk_attachments"
   value       = module.virtual_machine_data_disk_attachments.virtual_machine_data_disk_attachments_caching
@@ -164,6 +179,11 @@ output "virtual_machine_data_disk_attachments_write_accelerator_enabled" {
 }
 
 # --- azurerm_virtual_machine_extension ---
+output "virtual_machine_extensions_id" {
+  description = "Map of id values across all virtual_machine_extensions, keyed the same as var.virtual_machine_extensions"
+  value       = module.virtual_machine_extensions.virtual_machine_extensions_id
+}
+
 output "virtual_machine_extensions_auto_upgrade_minor_version" {
   description = "Map of auto_upgrade_minor_version values across all virtual_machine_extensions, keyed the same as var.virtual_machine_extensions"
   value       = module.virtual_machine_extensions.virtual_machine_extensions_auto_upgrade_minor_version
@@ -231,6 +251,11 @@ output "virtual_machine_extensions_virtual_machine_id" {
 }
 
 # --- azurerm_virtual_machine_gallery_application_assignment ---
+output "virtual_machine_gallery_application_assignments_id" {
+  description = "Map of id values across all virtual_machine_gallery_application_assignments, keyed the same as var.virtual_machine_gallery_application_assignments"
+  value       = module.virtual_machine_gallery_application_assignments.virtual_machine_gallery_application_assignments_id
+}
+
 output "virtual_machine_gallery_application_assignments_configuration_blob_uri" {
   description = "Map of configuration_blob_uri values across all virtual_machine_gallery_application_assignments, keyed the same as var.virtual_machine_gallery_application_assignments"
   value       = module.virtual_machine_gallery_application_assignments.virtual_machine_gallery_application_assignments_configuration_blob_uri
@@ -257,6 +282,11 @@ output "virtual_machine_gallery_application_assignments_virtual_machine_id" {
 }
 
 # --- azurerm_virtual_machine_implicit_data_disk_from_source ---
+output "virtual_machine_implicit_data_disk_from_sources_id" {
+  description = "Map of id values across all virtual_machine_implicit_data_disk_from_sources, keyed the same as var.virtual_machine_implicit_data_disk_from_sources"
+  value       = module.virtual_machine_implicit_data_disk_from_sources.virtual_machine_implicit_data_disk_from_sources_id
+}
+
 output "virtual_machine_implicit_data_disk_from_sources_caching" {
   description = "Map of caching values across all virtual_machine_implicit_data_disk_from_sources, keyed the same as var.virtual_machine_implicit_data_disk_from_sources"
   value       = module.virtual_machine_implicit_data_disk_from_sources.virtual_machine_implicit_data_disk_from_sources_caching
@@ -298,6 +328,11 @@ output "virtual_machine_implicit_data_disk_from_sources_write_accelerator_enable
 }
 
 # --- azurerm_virtual_machine_packet_capture ---
+output "virtual_machine_packet_captures_id" {
+  description = "Map of id values across all virtual_machine_packet_captures, keyed the same as var.virtual_machine_packet_captures"
+  value       = module.virtual_machine_packet_captures.virtual_machine_packet_captures_id
+}
+
 output "virtual_machine_packet_captures_filter" {
   description = "Map of filter values across all virtual_machine_packet_captures, keyed the same as var.virtual_machine_packet_captures"
   value       = module.virtual_machine_packet_captures.virtual_machine_packet_captures_filter
@@ -339,6 +374,11 @@ output "virtual_machine_packet_captures_virtual_machine_id" {
 }
 
 # --- azurerm_virtual_machine_run_command ---
+output "virtual_machine_run_commands_id" {
+  description = "Map of id values across all virtual_machine_run_commands, keyed the same as var.virtual_machine_run_commands"
+  value       = module.virtual_machine_run_commands.virtual_machine_run_commands_id
+}
+
 output "virtual_machine_run_commands_error_blob_managed_identity" {
   description = "Map of error_blob_managed_identity values across all virtual_machine_run_commands, keyed the same as var.virtual_machine_run_commands"
   value       = module.virtual_machine_run_commands.virtual_machine_run_commands_error_blob_managed_identity
