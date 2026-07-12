@@ -142,39 +142,39 @@ EOT
     }))
     os_profile_linux_config = optional(object({
       disable_password_authentication = bool
-      ssh_keys = optional(object({
+      ssh_keys = optional(list(object({
         key_data = string
         path     = string
-      }))
+      })))
     }))
-    os_profile_secrets = optional(object({
+    os_profile_secrets = optional(list(object({
       source_vault_id = string
-      vault_certificates = optional(object({
+      vault_certificates = optional(list(object({
         certificate_store = optional(string)
         certificate_url   = string
-      }))
-    }))
+      })))
+    })))
     os_profile_windows_config = optional(object({
-      additional_unattend_config = optional(object({
+      additional_unattend_config = optional(list(object({
         component    = string
         content      = string
         pass         = string
         setting_name = string
-      }))
+      })))
       enable_automatic_upgrades = optional(bool) # Default: false
       provision_vm_agent        = optional(bool) # Default: false
       timezone                  = optional(string)
-      winrm = optional(object({
+      winrm = optional(list(object({
         certificate_url = optional(string)
         protocol        = string
-      }))
+      })))
     }))
     plan = optional(object({
       name      = string
       product   = string
       publisher = string
     }))
-    storage_data_disk = optional(object({
+    storage_data_disk = optional(list(object({
       caching                   = optional(string)
       create_option             = string
       disk_size_gb              = optional(number)
@@ -184,7 +184,7 @@ EOT
       name                      = string
       vhd_uri                   = optional(string)
       write_accelerator_enabled = optional(bool) # Default: false
-    }))
+    })))
     storage_image_reference = optional(object({
       id        = optional(string)
       offer     = optional(string)
@@ -244,13 +244,13 @@ EOT
         file_path          = optional(string)
         storage_account_id = optional(string)
       })
-      filter = optional(object({
+      filter = optional(list(object({
         local_ip_address  = optional(string)
         local_port        = optional(string)
         protocol          = string
         remote_ip_address = optional(string)
         remote_port       = optional(string)
-      }))
+      })))
     })))
     virtual_machine_run_commands = optional(map(object({
       location        = string
@@ -277,14 +277,14 @@ EOT
         client_id = optional(string)
         object_id = optional(string)
       }))
-      parameter = optional(object({
+      parameter = optional(list(object({
         name  = string
         value = string
-      }))
-      protected_parameter = optional(object({
+      })))
+      protected_parameter = optional(list(object({
         name  = string
         value = string
-      }))
+      })))
     })))
   }))
 
