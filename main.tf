@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.virtual_machines : {
       for k2, v2 in coalesce(v1.virtual_machine_automanage_configuration_assignments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        virtual_machine_id = module.virtual_machines.virtual_machines["${k1}"].id
+        virtual_machine_id = module.virtual_machines.virtual_machines_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.virtual_machines : {
       for k2, v2 in coalesce(v1.virtual_machine_data_disk_attachments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        virtual_machine_id = module.virtual_machines.virtual_machines["${k1}"].id
+        virtual_machine_id = module.virtual_machines.virtual_machines_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.virtual_machines : {
       for k2, v2 in coalesce(v1.virtual_machine_extensions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        virtual_machine_id = module.virtual_machines.virtual_machines["${k1}"].id
+        virtual_machine_id = module.virtual_machines.virtual_machines_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.virtual_machines : {
       for k2, v2 in coalesce(v1.virtual_machine_gallery_application_assignments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        virtual_machine_id = module.virtual_machines.virtual_machines["${k1}"].id
+        virtual_machine_id = module.virtual_machines.virtual_machines_id["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.virtual_machines : {
       for k2, v2 in coalesce(v1.virtual_machine_implicit_data_disk_from_sources, {}) :
       "${k1}/${k2}" => merge(v2, {
-        virtual_machine_id = module.virtual_machines.virtual_machines["${k1}"].id
+        virtual_machine_id = module.virtual_machines.virtual_machines_id["${k1}"]
       })
     }
   ]...)
@@ -50,7 +50,7 @@ locals {
     for k1, v1 in var.virtual_machines : {
       for k2, v2 in coalesce(v1.virtual_machine_packet_captures, {}) :
       "${k1}/${k2}" => merge(v2, {
-        virtual_machine_id = module.virtual_machines.virtual_machines["${k1}"].id
+        virtual_machine_id = module.virtual_machines.virtual_machines_id["${k1}"]
       })
     }
   ]...)
@@ -59,7 +59,7 @@ locals {
     for k1, v1 in var.virtual_machines : {
       for k2, v2 in coalesce(v1.virtual_machine_run_commands, {}) :
       "${k1}/${k2}" => merge(v2, {
-        virtual_machine_id = module.virtual_machines.virtual_machines["${k1}"].id
+        virtual_machine_id = module.virtual_machines.virtual_machines_id["${k1}"]
       })
     }
   ]...)
