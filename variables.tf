@@ -108,8 +108,8 @@ EOT
     resource_group_name              = string
     vm_size                          = string
     availability_set_id              = optional(string)
-    delete_data_disks_on_termination = optional(bool) # Default: false
-    delete_os_disk_on_termination    = optional(bool) # Default: false
+    delete_data_disks_on_termination = optional(bool)
+    delete_os_disk_on_termination    = optional(bool)
     license_type                     = optional(string)
     primary_network_interface_id     = optional(string)
     proximity_placement_group_id     = optional(string)
@@ -125,7 +125,7 @@ EOT
       name                      = string
       os_type                   = optional(string)
       vhd_uri                   = optional(string)
-      write_accelerator_enabled = optional(bool) # Default: false
+      write_accelerator_enabled = optional(bool)
     })
     additional_capabilities = optional(object({
       ultra_ssd_enabled = bool
@@ -165,8 +165,8 @@ EOT
         pass         = string
         setting_name = string
       })))
-      enable_automatic_upgrades = optional(bool) # Default: false
-      provision_vm_agent        = optional(bool) # Default: false
+      enable_automatic_upgrades = optional(bool)
+      provision_vm_agent        = optional(bool)
       timezone                  = optional(string)
       winrm = optional(list(object({
         certificate_url = optional(string)
@@ -187,7 +187,7 @@ EOT
       managed_disk_type         = optional(string)
       name                      = string
       vhd_uri                   = optional(string)
-      write_accelerator_enabled = optional(bool) # Default: false
+      write_accelerator_enabled = optional(bool)
     })))
     storage_image_reference = optional(object({
       id        = optional(string)
@@ -203,8 +203,8 @@ EOT
       caching                   = string
       lun                       = number
       managed_disk_id           = string
-      create_option             = optional(string) # Default: "Attach"
-      write_accelerator_enabled = optional(bool)   # Default: false
+      create_option             = optional(string)
+      write_accelerator_enabled = optional(bool)
     })))
     virtual_machine_extensions = optional(map(object({
       name                                     = string
@@ -213,7 +213,7 @@ EOT
       type_handler_version                     = string
       auto_upgrade_minor_version               = optional(bool)
       automatic_upgrade_enabled                = optional(bool)
-      failure_suppression_enabled              = optional(bool) # Default: false
+      failure_suppression_enabled              = optional(bool)
       protected_settings                       = optional(string)
       protected_settings_key_vault_id          = optional(string)
       protected_settings_key_vault_secret_name = optional(string)
@@ -228,7 +228,7 @@ EOT
     virtual_machine_gallery_application_assignments = optional(map(object({
       gallery_application_version_id = string
       configuration_blob_uri         = optional(string)
-      order                          = optional(number) # Default: 0
+      order                          = optional(number)
       tag                            = optional(string)
     })))
     virtual_machine_implicit_data_disk_from_sources = optional(map(object({
@@ -238,14 +238,14 @@ EOT
       name                      = string
       source_resource_id        = string
       caching                   = optional(string)
-      write_accelerator_enabled = optional(bool) # Default: false
+      write_accelerator_enabled = optional(bool)
     })))
     virtual_machine_packet_captures = optional(map(object({
       name                                = string
       network_watcher_id                  = string
-      maximum_bytes_per_packet            = optional(number) # Default: 0
-      maximum_bytes_per_session           = optional(number) # Default: 1073741824
-      maximum_capture_duration_in_seconds = optional(number) # Default: 18000
+      maximum_bytes_per_packet            = optional(number)
+      maximum_bytes_per_session           = optional(number)
+      maximum_capture_duration_in_seconds = optional(number)
       storage_location = object({
         file_path          = optional(string)
         storage_account_id = optional(string)
