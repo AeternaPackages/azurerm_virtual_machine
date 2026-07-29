@@ -66,48 +66,48 @@ locals {
 }
 
 module "virtual_machines" {
-  source           = "git::https://github.com/AeternaModules/azurerm_virtual_machine.git?ref=v4.81.0"
+  source           = "git::https://github.com/AeternaModules/azurerm_virtual_machine.git?ref=v5.0.0"
   virtual_machines = local.virtual_machines
 }
 
 module "virtual_machine_automanage_configuration_assignments" {
-  source                                               = "git::https://github.com/AeternaModules/azurerm_virtual_machine_automanage_configuration_assignment.git?ref=v4.81.0"
+  source                                               = "git::https://github.com/AeternaModules/azurerm_virtual_machine_automanage_configuration_assignment.git?ref=v5.0.0"
   virtual_machine_automanage_configuration_assignments = local.virtual_machine_automanage_configuration_assignments
   depends_on                                           = [module.virtual_machines]
 }
 
 module "virtual_machine_data_disk_attachments" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_virtual_machine_data_disk_attachment.git?ref=v4.81.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_virtual_machine_data_disk_attachment.git?ref=v5.0.0"
   virtual_machine_data_disk_attachments = local.virtual_machine_data_disk_attachments
   depends_on                            = [module.virtual_machines]
 }
 
 module "virtual_machine_extensions" {
-  source                     = "git::https://github.com/AeternaModules/azurerm_virtual_machine_extension.git?ref=v4.81.0"
+  source                     = "git::https://github.com/AeternaModules/azurerm_virtual_machine_extension.git?ref=v5.0.0"
   virtual_machine_extensions = local.virtual_machine_extensions
   depends_on                 = [module.virtual_machines]
 }
 
 module "virtual_machine_gallery_application_assignments" {
-  source                                          = "git::https://github.com/AeternaModules/azurerm_virtual_machine_gallery_application_assignment.git?ref=v4.81.0"
+  source                                          = "git::https://github.com/AeternaModules/azurerm_virtual_machine_gallery_application_assignment.git?ref=v5.0.0"
   virtual_machine_gallery_application_assignments = local.virtual_machine_gallery_application_assignments
   depends_on                                      = [module.virtual_machines]
 }
 
 module "virtual_machine_implicit_data_disk_from_sources" {
-  source                                          = "git::https://github.com/AeternaModules/azurerm_virtual_machine_implicit_data_disk_from_source.git?ref=v4.81.0"
+  source                                          = "git::https://github.com/AeternaModules/azurerm_virtual_machine_implicit_data_disk_from_source.git?ref=v5.0.0"
   virtual_machine_implicit_data_disk_from_sources = local.virtual_machine_implicit_data_disk_from_sources
   depends_on                                      = [module.virtual_machines]
 }
 
 module "virtual_machine_packet_captures" {
-  source                          = "git::https://github.com/AeternaModules/azurerm_virtual_machine_packet_capture.git?ref=v4.81.0"
+  source                          = "git::https://github.com/AeternaModules/azurerm_virtual_machine_packet_capture.git?ref=v5.0.0"
   virtual_machine_packet_captures = local.virtual_machine_packet_captures
   depends_on                      = [module.virtual_machines]
 }
 
 module "virtual_machine_run_commands" {
-  source                       = "git::https://github.com/AeternaModules/azurerm_virtual_machine_run_command.git?ref=v4.81.0"
+  source                       = "git::https://github.com/AeternaModules/azurerm_virtual_machine_run_command.git?ref=v5.0.0"
   virtual_machine_run_commands = local.virtual_machine_run_commands
   depends_on                   = [module.virtual_machines]
 }
